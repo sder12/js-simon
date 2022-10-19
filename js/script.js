@@ -1,0 +1,2 @@
+//DEBUG
+document.writeln('Hello');
