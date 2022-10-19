@@ -35,8 +35,10 @@ const cancelNumberTimer = setTimeout(function () {
   containerDiv.innerHTML = "";
 }, 3000); //3sec poi devo mettere a 30000
 
+const promptInputTime = setTimeout(promptInput, 3020);
 
-const promptInputTimer = setTimeout(function () {
+function promptInput() {
+  console.log(arrayFiveNumber);
   let arrayUser = [];
   for (i = 0; arrayUser.length < 5; i++) {
     let numberInput = parseInt(
@@ -48,7 +50,36 @@ const promptInputTimer = setTimeout(function () {
     }
   }
   console.log(arrayUser);
-}, 3020);
+  let arrayIgualNumber = [];
+  for (i = 0; i < arrayUser.length; i++) {
+    const arrayUserItem = arrayUser[i];
+    if (arrayFiveNumber.includes(arrayUserItem)) {
+      arrayIgualNumber.push(arrayUserItem);
+    }
+  }
+  console.log(arrayIgualNumber);
+  let guessNumbers = arrayIgualNumber.length;
+
+
+  if (arrayFiveNumber === arrayUser) {
+    const resultDiv = document.createElement("div");
+    resultDiv.classList.add("result");
+    resultDiv.innerHTML += "Congrats, you win!";
+    containerDiv.append(resultDiv);
+  } else {
+    const resultDiv = document.createElement("div");
+    resultDiv.classList.add("result");
+    resultDiv.innerHTML += `Sorry...you lost! <br> 
+    guessed: ${guessNumbers} / 5
+    <br> n°: ${arrayIgualNumber}`;
+    containerDiv.append(resultDiv);
+  }
+
+
+}
+
+
+
 
 
 
