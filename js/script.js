@@ -11,9 +11,9 @@
 // [*]creo timer html che nasconde i numeri dopo 30sec
 // [*]creo ciclo per 5 prompt in cui utente inserisce 5 numeri
 // [*]salvo i 5 parseint prompt in una seconda array
-// []confronto le due array
-// []SE tutti i numeri sono uguali messaggio"hai vinto"
-// []ALTRIMENTI se sono diversi messaggio "hai perso" + visualizzo quali sono ugali
+// [*]confronto le due array
+// [*]SE tutti i numeri sono uguali messaggio"hai vinto"
+// [*]ALTRIMENTI se sono diversi messaggio "hai perso" + visualizzo quali sono ugali
 
 let arrayFiveNumber = [];
 arrayFiveNumber = generateArrayRandomNumbers(5, 1, 100);
@@ -50,6 +50,8 @@ function promptInput() {
     }
   }
   console.log(arrayUser);
+
+  //Array with egual numbers between the random and the user input
   let arrayIgualNumber = [];
   for (i = 0; i < arrayUser.length; i++) {
     const arrayUserItem = arrayUser[i];
@@ -60,11 +62,16 @@ function promptInput() {
   console.log(arrayIgualNumber);
   let guessNumbers = arrayIgualNumber.length;
 
-
-  if (arrayFiveNumber === arrayUser) {
+  // RESULT OUTPUT
+  if (guessNumbers === 5) {
     const resultDiv = document.createElement("div");
     resultDiv.classList.add("result");
     resultDiv.innerHTML += "Congrats, you win!";
+    containerDiv.append(resultDiv);
+  } else if (guessNumbers === 0) {
+    const resultDiv = document.createElement("div");
+    resultDiv.classList.add("result");
+    resultDiv.innerHTML += `Sorry...you lost! <br> you guessed 0 number`;
     containerDiv.append(resultDiv);
   } else {
     const resultDiv = document.createElement("div");
@@ -74,14 +81,7 @@ function promptInput() {
     <br> n°: ${arrayIgualNumber}`;
     containerDiv.append(resultDiv);
   }
-
-
 }
-
-
-
-
-
 
 //FUNCTION RANDOM NUMBER---------------------------
 //RANDOM NUMBERS GENERATOR W3school
