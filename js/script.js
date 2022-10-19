@@ -31,7 +31,9 @@ for (i = 0; i < arrayFiveNumber.length; i++) {
   containerDiv.append(squareDiv);
 }
 
-
+const cancelNumberTimer = setTimeout(function () {
+  containerDiv.innerHTML = "";
+}, 3000); //3sec poi devo mettere a 30000
 
 
 
