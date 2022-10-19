@@ -16,14 +16,14 @@
 .container-number{
     width: 800px;
     height: 400px;
-    background-color: white;
+    background-color: lightgrey;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .square{
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     width: 90px;
     height: 90px;

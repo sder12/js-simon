@@ -6,18 +6,30 @@
 // uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
-//creare array composta da 5 numeri casuali con range da 1 a 100
-// stampo numeri sulla pagina
-//creo timer html che nasconde i numeri dopo 30sec
-// creo ciclo per 5 prompt in cui utente inserisce 5 numeri
-// salvo i 5 parseint prompt in una seconda array
-// confronto le due array
-// SE tutti i numeri sono uguali messaggio"hai vinto"
-// ALTRIMENTI se sono diversi messaggio "hai perso" + visualizzo quali sono ugali
+// [*]creare array composta da 5 numeri casuali con range da 1 a 100
+// [*]stampo numeri sulla pagina
+// []creo timer html che nasconde i numeri dopo 30sec
+// []creo ciclo per 5 prompt in cui utente inserisce 5 numeri
+// []salvo i 5 parseint prompt in una seconda array
+// []confronto le due array
+// []SE tutti i numeri sono uguali messaggio"hai vinto"
+// []ALTRIMENTI se sono diversi messaggio "hai perso" + visualizzo quali sono ugali
 
 let arrayFiveNumber = [];
 arrayFiveNumber = generateArrayRandomNumbers(5, 1, 100);
 console.log(arrayFiveNumber);
+
+const containerDiv = document.querySelector(".container-number");
+console.log(containerDiv);
+
+for (i = 0; i < arrayFiveNumber.length; i++) {
+  let singleRndNumber = arrayFiveNumber[i];
+  console.log(singleRndNumber);
+  const squareDiv = document.createElement("div");
+  squareDiv.classList.add("square");
+  squareDiv.innerHTML = singleRndNumber;
+  containerDiv.append(squareDiv);
+}
 
 
 
