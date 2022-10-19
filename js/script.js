@@ -8,9 +8,9 @@
 
 // [*]creare array composta da 5 numeri casuali con range da 1 a 100
 // [*]stampo numeri sulla pagina
-// []creo timer html che nasconde i numeri dopo 30sec
-// []creo ciclo per 5 prompt in cui utente inserisce 5 numeri
-// []salvo i 5 parseint prompt in una seconda array
+// [*]creo timer html che nasconde i numeri dopo 30sec
+// [*]creo ciclo per 5 prompt in cui utente inserisce 5 numeri
+// [*]salvo i 5 parseint prompt in una seconda array
 // []confronto le due array
 // []SE tutti i numeri sono uguali messaggio"hai vinto"
 // []ALTRIMENTI se sono diversi messaggio "hai perso" + visualizzo quali sono ugali
@@ -35,6 +35,20 @@ const cancelNumberTimer = setTimeout(function () {
   containerDiv.innerHTML = "";
 }, 3000); //3sec poi devo mettere a 30000
 
+
+const promptInputTimer = setTimeout(function () {
+  let arrayUser = [];
+  for (i = 0; arrayUser.length < 5; i++) {
+    let numberInput = parseInt(
+      prompt("Scrivi un numero di quelli visualizzati")
+    );
+    //se lo scrivo due volte non lo conta
+    if (!arrayUser.includes(numberInput)) {
+      arrayUser.push(numberInput);
+    }
+  }
+  console.log(arrayUser);
+}, 3020);
 
 
 
